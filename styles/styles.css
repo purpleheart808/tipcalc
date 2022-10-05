@@ -1,4 +1,17 @@
 html{
-    font-size: 10px;
+    font-size: 10px; /*root font size*/
     color: #4d4d4d;
+}
+
+main{
+    max-width: 50rem; /*  50 x root font size = 500px */
+    margin: 3rem auto; /*this centres the section along the horizontal axis*/
+    background: linear-gradient(#3dc0c0, #5bceae); /*set color to transition btwen two colors*/
+    padding: 3rem 1.6rem 6rem 1.6rem; /*clockwise starting with top, right, bottom, then left*/
+    border-radius: 4rem;
+}
+
+h1{
+    text-align: center;
+    font-size: 3rem;
 }
