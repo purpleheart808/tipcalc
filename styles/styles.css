@@ -40,10 +40,32 @@ section > div{
 
 .bill label{
     flex: 1; /* makes label occupy 1x the available space within the div*/
+    align-self: center;
 
 
 }
 
 .bill input{
     flex: 3; /* makes input bar occupy 3x the available space within the div*/
+}
+
+input[type="number"]{ /*select only the input element(s) whose type is what's  specified in the " "*/
+    background: #f4f4f5;
+    font-size: 1.6rem;
+    border: 1px solid lightgray; /*clockwise: size, style, color*/
+    border-radius: 0.5rem;
+    padding: 0.8rem 0rem 0.8rem 0.8rem;
+    box-shadow: inset 0 2px 2px lightgray; /*inset value makes the element appear to be indented*/
+
+}
+
+.space-between{
+    /*use the class to target the html wrapper elements containing spans which need to be spaced on either end of their containers*/
+    display: flex;
+    justify-content: space-between; /*use flexbox space-between justification to space out the elements within said wrappers*/
+}
+
+.total{
+    font-size: 2rem;
+    font-weight: bolder;
 }
