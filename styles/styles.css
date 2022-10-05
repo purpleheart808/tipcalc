@@ -14,4 +14,36 @@ main{
 h1{
     text-align: center;
     font-size: 3rem;
+    margin: 0; /*h1 element has initial margin so let us remove that*/
+    padding-bottom: 3rem; /*to match the padding at the top coming from the main element's padding set above*/
+}
+
+section{
+    background: white ;
+    font-size: 1.8rem;
+    padding: 0 1.6rem; /*top and bottom = 0 left and right=1.6*/
+    margin-bottom: 1.6rem;
+    border-radius: 1rem;
+    box-shadow: inset 0 2px 2px lightgray; /*inset value makes the section appear to be indented*/
+}
+
+section > div{
+/*this targets the direct child elements of the section element which are divs, and not any other divs which may be nested within other elements*/
+ padding: 1.6rem 0; /* add padding to top and bottom and not sides, to space out the divs*/
+
+}
+
+.bill {
+    display: flex;
+   
+}
+
+.bill label{
+    flex: 1; /* makes label occupy 1x the available space within the div*/
+
+
+}
+
+.bill input{
+    flex: 3; /* makes input bar occupy 3x the available space within the div*/
 }
