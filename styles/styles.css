@@ -69,3 +69,16 @@ input[type="number"]{ /*select only the input element(s) whose type is what's  s
     font-size: 2rem;
     font-weight: bolder;
 }
+
+.range{
+    -webkit-appearance: none; /*we use the vendor prefix to enable the specified browser to use or identify an unsurported css property*/
+    width: 100%; /*so that it fills it's container instead of only going quarter way*/
+    height: 8px;
+    background-color: #eee;
+    margin-top: 1.2rem;
+    border-radius: 0.3rem;
+    outline-color: #5bceae;
+     
+
+}
+
