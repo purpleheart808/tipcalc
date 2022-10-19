@@ -52,7 +52,7 @@ section > div{
 }
 
 input[type="number"]{ /*select only the input element(s) whose type is what's  specified in the " "*/
-   font-family: inherit;
+   font-family: inherit; /*inherit the font-family specified in the parent html element*/
     background: #f4f4f5;
     font-size: 1.6rem;
     border: 1px solid lightgray; /*clockwise: size, style, color*/
