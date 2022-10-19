@@ -82,3 +82,13 @@ input[type="number"]{ /*select only the input element(s) whose type is what's  s
 
 }
 
+.range::-webkit-slider-thumb{/* a pseudo element, allowing us to target a more specific element of a parent element, eg, you can target the first letter of a sentence*/
+ /*here, we are using the pseudo element technique to target the slider-thumb of the range input slider element*/
+ /*we do this to create our own uniquely styled version of the slider thumb, by first setting the browser defaul to not be displayed and then creating our own using css styling*/
+ -webkit-appearance: none;
+ width: 2.2rem;
+ height: 2.2rem;
+ border-radius: 50%; /*to make it a circle*/
+ background-color: #3dc0c0;  
+
+}
