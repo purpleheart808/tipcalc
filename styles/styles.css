@@ -1,6 +1,8 @@
 html{
     font-size: 10px; /*root font size*/
     color: #4d4d4d;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 main{
@@ -50,6 +52,7 @@ section > div{
 }
 
 input[type="number"]{ /*select only the input element(s) whose type is what's  specified in the " "*/
+   font-family: inherit;
     background: #f4f4f5;
     font-size: 1.6rem;
     border: 1px solid lightgray; /*clockwise: size, style, color*/
@@ -90,5 +93,5 @@ input[type="number"]{ /*select only the input element(s) whose type is what's  s
  height: 2.2rem;
  border-radius: 50%; /*to make it a circle*/
  background-color: #3dc0c0;  
-
+cursor: pointer;
 }
