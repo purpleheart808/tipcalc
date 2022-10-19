@@ -17,7 +17,7 @@
     <section>
         <div class="bill">
             <label for="yourBill">Bill</label>
-            <input type="number" placeholder="Your bill" id="yourBill" onclick="update()" />
+            <input type="number" placeholder="Your bill" id="yourBill" oninput="update()" />
 
         </div>
 
@@ -65,7 +65,11 @@
 
 <script>
     function update(){
-console.log("bill area clicked");
+let bill = document.getElementById("yourBill").value;
+let tipPercent = document.getElementById("tipInput").value;
+let splitValue = document.getElementById("splitInput").value;
+console.log({bill, tipPercent, splitValue});
+
     }
 </script>
 </body>
