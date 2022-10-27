@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIP CALC</title>
+    <title>tippie :)</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     
 <main id="container"> <!-- give the container element an id which we can use in JS to listen for all input events from its child input elements-->
-    <h1>tippie</h1>
+    <h1>tippie :)</h1>
     <section>
         <div class="bill">
             <label for="yourBill">Bill</label>
-            <input type="number" placeholder="Your bill" id="yourBill"  />
+            <input type="number" placeholder="What's the bill?" id="yourBill"  />
 
         </div>
 
         <div>
             <div class="space-between">
-                <label for="tipInput">Select tip</label>
+                <label for="tipInput">How much would you like to tip?</label>
                 <span id="tipPercent"></span>
             </div>
             <input type="range" value="0" id="tipInput" class="range">
@@ -44,7 +44,7 @@
     <section>
         <div>
         <div class="space-between">
-            <label for="splitInput">Split</label>
+            <label for="splitInput">How many people?</label>
             <span id="splitValue"></span>
         </div>
         <input type="range" min="1" max="10" value="1" id="splitInput" class="range">
@@ -89,12 +89,8 @@ let splitValue = document.getElementById("splitInput").value;
 //console.log({bill, tipPercent, splitValue}); //log the variable values, use curly braces to view them as objects//
 
 let tipValue = bill * (tipPercent / 100);
-
-
 let tipEach = tipValue/splitValue;
-
 let totalBill = bill + tipValue;
-
 let newBillEach = (bill + tipValue) / splitValue; // first get total bill inlcuding tip then divide by split value to get bill for each
 
 

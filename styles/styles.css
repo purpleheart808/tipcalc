@@ -5,10 +5,11 @@ html{
     font-weight: 300;
 }
 
+
 main{
     max-width: 50rem; /*  50 x root font size = 500px */
     margin: 3rem auto; /*this centres the section along the horizontal axis*/
-    background: linear-gradient(#3dc0c0, #5bceae); /*set color to transition btwen two colors*/
+    background: linear-gradient(palegreen, lightgreen); /*set color to transition btwen two colors*/
     padding: 3rem 1.6rem 6rem 1.6rem; /*clockwise starting with top, right, bottom, then left*/
     border-radius: 4rem;
 }
@@ -92,6 +93,6 @@ input[type="number"]{ /*select only the input element(s) whose type is what's  s
  width: 2.2rem;
  height: 2.2rem;
  border-radius: 50%; /*to make it a circle*/
- background-color: #3dc0c0;  
+ background-color: lightgreen;  
 cursor: pointer;
 }
