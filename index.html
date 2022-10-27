@@ -68,8 +68,13 @@
 let bill = document.getElementById("yourBill").value; //get value from element with yourBill id and assign it to bill JS variable// 
 let tipPercent = document.getElementById("tipInput").value;
 let splitValue = document.getElementById("splitInput").value;
-console.log({bill, tipPercent, splitValue}); //log the variable values, use curly braces to view them as objects//
+//console.log({bill, tipPercent, splitValue}); //log the variable values, use curly braces to view them as objects//
 
+let tipValue = bill * (tipPercent / 100);
+console.log(tipValue);
+let billEach = bill/splitValue;
+let tipEach = tipValue/splitValue;
+let total = bill + tipValue;
     }
 
     let container = document.getElementById("container"); //create a JS representation of the <main> id=container html element so that we can catch events from it within our script and not in the HTML
