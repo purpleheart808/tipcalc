@@ -66,6 +66,22 @@
 </main>
 
 <script>
+function formatMoney(value){ // use this function to format the currency variables by setting to 2 decimal places and prefix a currency symbol
+    
+    value = Math.ceil(value * 100) / 100; //ensures decimal values are rounded up, not down, for accurate amounts
+
+    value = value.toFixed(2);// change the varaible to the set number of decimal places
+    return "ZMW " + value;
+}
+
+
+function formatSplit(value){
+    if (value === "1") {
+    return value  + " person";
+} else  {
+    return value  + " people";  
+}
+}
     function update(){
 let bill = Number(document.getElementById("yourBill").value); //get value from element with yourBill id and assign it to bill JS variable// 
 let tipPercent = document.getElementById("tipInput").value;
@@ -83,16 +99,11 @@ let newBillEach = (bill + tipValue) / splitValue; // first get total bill inlcud
 
 
 document.getElementById("tipPercent").innerHTML = tipPercent + "%"; //to display the percentage amount on the tip span. use innerHTML to set the value between the html tags
-document.getElementById("tipValue").innerHTML = tipValue;  
-document.getElementById("totalWithTip").innerHTML = totalBill;  
-if (splitValue == 1) {
-    document.getElementById("splitValue").innerHTML = splitValue  + " person";
-} else  {
-    document.getElementById("splitValue").innerHTML = splitValue  + " people";  
-}
-
-document.getElementById("billEach").innerHTML = newBillEach;
-document.getElementById("tipEach").innerHTML = tipEach;
+document.getElementById("tipValue").innerHTML = formatMoney(tipValue);  
+document.getElementById("totalWithTip").innerHTML =  formatMoney(totalBill);  
+document.getElementById("splitValue").innerHTML = formatSplit(splitValue);
+document.getElementById("billEach").innerHTML = formatMoney(newBillEach);
+document.getElementById("tipEach").innerHTML = formatMoney(tipEach);
 }
 
     let container = document.getElementById("container"); //create a JS representation of the <main> id=container html element so that we can catch events from it within our script and not in the HTML
