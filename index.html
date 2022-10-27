@@ -12,12 +12,12 @@
 </head>
 <body>
     
-<main>
-    <h1>Quick Tip</h1>
+<main id="container"> <!-- give the container element an id which we can use in JS to listen for all input events from its child input elements-->
+    <h1>tippie</h1>
     <section>
         <div class="bill">
             <label for="yourBill">Bill</label>
-            <input type="number" placeholder="Your bill" id="yourBill" oninput="update()" />
+            <input type="number" placeholder="Your bill" id="yourBill"  />
 
         </div>
 
@@ -65,12 +65,15 @@
 
 <script>
     function update(){
-let bill = document.getElementById("yourBill").value;
+let bill = document.getElementById("yourBill").value; //get value from element with yourBill id and assign it to bill JS variable// 
 let tipPercent = document.getElementById("tipInput").value;
 let splitValue = document.getElementById("splitInput").value;
-console.log({bill, tipPercent, splitValue});
+console.log({bill, tipPercent, splitValue}); //log the variable values, use curly braces to view them as objects//
 
     }
+
+    let container = document.getElementById("container"); //create a JS representation of the <main> id=container html element so that we can catch events from it within our script and not in the HTML
+    container.addEventListener("input", update); //after creating a JS representation of the container, use an event listener to catch any 'input' type events and send them to the 'update' JS method, that's the syntax here
 </script>
 </body>
 </html>
