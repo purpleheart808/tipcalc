@@ -24,7 +24,7 @@
         <div>
             <div class="space-between">
                 <label for="tipInput">Select tip</label>
-                <span id="tipPercent">0%</span>
+                <span id="tipPercent"></span>
             </div>
             <input type="range" value="0" id="tipInput" class="range">
 
@@ -45,14 +45,9 @@
         <div>
         <div class="space-between">
             <label for="splitInput">Split</label>
-            <span id="splitValue"> 1 person</span>
+            <span id="splitValue"></span>
         </div>
         <input type="range" min="1" max="10" value="1" id="splitInput" class="range">
-    </div>
-
-    <div class="space-between">
-        <span> Bill each</span>
-        <span id="billEach"></span>
     </div>
 
     <div class="space-between">
@@ -60,22 +55,45 @@
         <span id="tipEach"></span>
     </div>
 
+    <div class="space-between">
+        <span> Bill each</span>
+        <span id="billEach"></span>
+    </div>
+
+  
+
     </section>
 </main>
 
 <script>
     function update(){
-let bill = document.getElementById("yourBill").value; //get value from element with yourBill id and assign it to bill JS variable// 
+let bill = Number(document.getElementById("yourBill").value); //get value from element with yourBill id and assign it to bill JS variable// 
 let tipPercent = document.getElementById("tipInput").value;
 let splitValue = document.getElementById("splitInput").value;
 //console.log({bill, tipPercent, splitValue}); //log the variable values, use curly braces to view them as objects//
 
 let tipValue = bill * (tipPercent / 100);
-console.log(tipValue);
-let billEach = bill/splitValue;
+
+
 let tipEach = tipValue/splitValue;
-let total = bill + tipValue;
-    }
+
+let totalBill = bill + tipValue;
+
+let newBillEach = (bill + tipValue) / splitValue; // first get total bill inlcuding tip then divide by split value to get bill for each
+
+
+document.getElementById("tipPercent").innerHTML = tipPercent + "%"; //to display the percentage amount on the tip span. use innerHTML to set the value between the html tags
+document.getElementById("tipValue").innerHTML = tipValue;  
+document.getElementById("totalWithTip").innerHTML = totalBill;  
+if (splitValue == 1) {
+    document.getElementById("splitValue").innerHTML = splitValue  + " person";
+} else  {
+    document.getElementById("splitValue").innerHTML = splitValue  + " people";  
+}
+
+document.getElementById("billEach").innerHTML = newBillEach;
+document.getElementById("tipEach").innerHTML = tipEach;
+}
 
     let container = document.getElementById("container"); //create a JS representation of the <main> id=container html element so that we can catch events from it within our script and not in the HTML
     container.addEventListener("input", update); //after creating a JS representation of the container, use an event listener to catch any 'input' type events and send them to the 'update' JS method, that's the syntax here
